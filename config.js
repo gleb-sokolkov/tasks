@@ -18,24 +18,15 @@ module.exports = {
         },
         entries: {
             images: path.resolve(__dirname, 'client/images/[hash][ext][query]'),
-            slider: {
-                js: path.resolve(__dirname, 'client/slider.js'),
+            index: {
+                js: path.resolve(__dirname, 'client/index.js'),
                 html: {
-                    title: 'Slider',
-                    filename: 'slider.html',
-                    template: "./client/html/slider.html",
-                    chunks: ['slider'],
+                    title: 'Index',
+                    filename: 'index.html',
+                    template: "./client/html/index.html",
+                    chunks: ['index'],
                 },
-            },
-            static: {
-                js: path.resolve(__dirname, 'client/static.js'),
-                html: {
-                    title: 'Static',
-                    filename: 'static.html',
-                    template: path.resolve(__dirname, 'client/html/static.html'),
-                    chunks: ['static'],
-                },
-            },
+            }
         },
         bundles: {
             js: 'js/[name].bundle.js',

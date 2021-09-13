@@ -1,3 +1,0 @@
-/*! For license information please see static.bundle.js.LICENSE.txt */
-!function(){"use strict";var e={"./client/scss/styles.scss":function(e,t,s){s.r(t)}},t={};function s(r){var n=t[r];if(void 0!==n)return n.exports;var o=t[r]={exports:{}};return e[r](o,o.exports,s),o.exports}s.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var r={};!function(){s.r(r);s("./client/scss/styles.scss")}()}();
-//# sourceMappingURL=static.bundle.js.map

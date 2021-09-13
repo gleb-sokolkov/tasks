@@ -8,8 +8,7 @@ const config = require('./config');
 
 module.exports = {
     entry: {
-        slider: config.webpack.entries.slider.js,
-        static: config.webpack.entries.static.js,
+        index: config.webpack.entries.index.js,
     },
     output: {
         path: config.webpack.output.dist,
@@ -59,8 +58,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: config.webpack.bundles.css
         }),
-        new HtmlWebpackPlugin(config.webpack.entries.slider.html),
-        new HtmlWebpackPlugin(config.webpack.entries.static.html),
+        new HtmlWebpackPlugin(config.webpack.entries.index.html),
         new ESLintWebpackPlugin(),
     ],
     optimization: {
