@@ -1,0 +1,31 @@
+:root {
+    --unit:             1em;
+    --text-scale-ratio: 1.2;
+    --font-xs:  calc(var(--unit) / var(--text-scale-ratio) / var(--text-scale-ratio));
+    --font-sm:  calc(var(--font-xs) * var(--text-scale-ratio));
+    --font-md:  calc(var(--font-sm) * var(--text-scale-ratio));
+    --font-lg:  calc(var(--font-md) * var(--text-scale-ratio));
+    --font-xs:  calc(var(--font-lg) * var(--text-scale-ratio));
+    --font-xxs: calc(var(--font-xs) * var(--text-scale-ratio));
+
+    --space-unit:       1em;
+    --space-multiplier: 1.5;
+    --space-xs:         calc(var(--space-unit) / var(--space-multiplier) / var(--space-multiplier));
+    --space-sm:         calc(var(--space-xs) * var(--space-multiplier));
+    --space-md:         calc(var(--space-sm) * var(--space-multiplier));
+    --space-lg:         calc(var(--space-md) * var(--space-multiplier));
+    --space-xl:         calc(var(--space-lg) * var(--space-multiplier));
+    --space-xxl:        calc(var(--space-xl) * var(--space-multiplier));
+    --space-xxxl:       calc(var(--space-xxl) * var(--space-multiplier));
+    --space-xxxxl:      calc(var(--space-xxxl) * var(--space-multiplier));
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-md);
+}
+
+html, body, * {
+    box-sizing: border-box;
+}

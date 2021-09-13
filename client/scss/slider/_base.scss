@@ -1,0 +1,4 @@
+html, body {
+    background: map-get($map: $color-scheme, $key: "light");
+}
+

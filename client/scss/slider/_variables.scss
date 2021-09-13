@@ -1,0 +1,24 @@
+/* ====================================
+            COLOR SCHEMES
+=====================================*/
+
+$black: hsl(0, 0%, 4%);
+$purple: hsl(240, 24%, 19%);
+$blackCoral: hsl(211, 25%, 34%);
+$pink: hsl(296, 14%, 63%);
+$light: hsl(207, 22%, 92%);
+
+$color-scheme: () !default;
+$color-scheme: map-merge((
+    "black": $black,
+    "purple": $purple,
+    "blackCoral": $blackCoral,
+    "pink": $pink,
+    "light": $light
+), $color-scheme);
+
+/* ====================================
+             BLOCK VALUES
+=====================================*/
+
+$height: 40em;

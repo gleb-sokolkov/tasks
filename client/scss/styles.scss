@@ -1,5 +1,9 @@
-//This file puts styles together, which will be used on every single page of your application   
+//This is a general file that puts styles together, which will be used on every single page of your application   
 @import "fonts";
 @import "variables";
 @import "mixins";
-@import "./slider";
+@import "base";
+
+@import "layouts";
+
+@import "components";

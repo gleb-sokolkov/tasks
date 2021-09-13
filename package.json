@@ -8,7 +8,8 @@
     "dev": "nodemon server.js",
     "prod": "node server.js",
     "watch": "webpack --config webpack.dev.config.js",
-    "build": "webpack --config webpack.prod.config.js"
+    "build": "webpack --config webpack.prod.config.js",
+    "eslint-fix": "eslint ./client --fix"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,42 @@
+@import "variables";
+@import "base";
+
+.slider-container {
+
+    &__element {
+        padding: var(--space-xxxl);
+    }
+}
+
+.slider {
+
+    background: map-get($map: $color-scheme, $key: "pink");
+
+    &_fixed {
+        height: $height; 
+    }
+
+    &__content {
+    }
+
+    &__element {
+    }
+
+    &__toggle-panel {
+    }
+
+    &__arrow-left-container {
+    }
+
+    &__arrow-left {
+    }
+
+    &__toggle-container {
+    }
+
+    &__arrow-right-container {
+    }
+
+    &__arrow-right {
+    }
+}
