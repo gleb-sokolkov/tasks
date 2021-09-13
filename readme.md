@@ -1,2 +1,1 @@
-# A Simple slider without *css-transitions*
-файлы с заданиями в папке client
+# A Simple Webpack 5 boilerplate with babel, eslint airbnb, scss postss configurations 
