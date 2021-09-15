@@ -2,11 +2,24 @@
             COLOR SCHEMES
 =====================================*/
 
-$black: hsl(0, 0%, 4%);
-$purple: hsl(240, 24%, 19%);
-$blackCoral: hsl(211, 25%, 34%);
-$pink: hsl(296, 14%, 63%);
-$light: hsl(207, 22%, 92%);
+$black-h:       hsl(0, 0%, 0%);
+$black:         hsl(0, 0%, 4%);
+
+$purple:        hsl(240, 24%, 19%);
+$purple-h:      hsl(240, 24%, 9%);
+
+$blackCoral:    hsl(211, 25%, 34%);
+$blackCoral-h:  hsl(211, 25%, 24%);
+
+$pink:          hsl(296, 14%, 63%);
+$pink-h:        hsl(296, 14%, 53%);
+
+$light:         hsl(207, 22%, 92%);
+$light-h:       hsl(207, 22%, 82%);
+
+$white:         hsl(0, 0%, 100%);
+$white-h:       hsl(0, 0%, 90%);
+
 
 $color-scheme: () !default;
 $color-scheme: map-merge((
@@ -14,11 +27,36 @@ $color-scheme: map-merge((
     "purple": $purple,
     "blackCoral": $blackCoral,
     "pink": $pink,
-    "light": $light
+    "light": $light,
+    "white": $white
 ), $color-scheme);
+
+$color-scheme-hover: () !default;
+$color-scheme-hover: map-merge((
+    "black": $black-h,
+    "purple": $purple-h,
+    "blackCoral": $blackCoral-h,
+    "pink": $pink-h,
+    "light": $light-h,
+    "white": $white-h
+), $color-scheme-hover);
+
+/* ====================================
+             TYPOGRAPHY
+=====================================*/
+
+$title-font: 3em;
+
 
 /* ====================================
              BLOCK VALUES
 =====================================*/
 
-$height: 40em;
+$max-height: 40em;
+$content-height: 20em;
+$arrow-size: 4em;
+$toggle-size: 1.5em;
+
+
+
+

@@ -64,7 +64,11 @@
     "not ie <= 9"
   ],
   "eslintConfig": {
-    "extends": "airbnb-base"
+    "extends": "airbnb-base",
+    "env": {
+      "node": true, 
+      "browser": true
+    }
   },
   "postcss": {
     "plugins": {
