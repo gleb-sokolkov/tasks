@@ -5,7 +5,7 @@ const config = require('./config');
 
 module.exports = {
     entry: {
-        static: config.webpack.entries.index.js,
+        static: config.webpack.entries.static.js,
     },
     output: {
         path: config.webpack.output.dist,
@@ -78,7 +78,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: config.webpack.entries.bundles.css
         }),
+<<<<<<< HEAD
         new HtmlWebpackPlugin(config.webpack.entries.index.html),
+=======
+        new HtmlWebpackPlugin(config.webpack.entries.static.html),
+>>>>>>> 2016f9e... intial commit
         new ESLintWebpackPlugin(),
     ],
 };

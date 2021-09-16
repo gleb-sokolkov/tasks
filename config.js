@@ -20,12 +20,12 @@ module.exports = {
     },
     entries: {
       index: {
-        js: path.resolve(__dirname, 'client/index.js'),
+        js: path.resolve(__dirname, 'client/static.js'),
         html: {
           title: 'Static',
-          filename: 'index.html',
-          template: path.resolve(__dirname, 'client/html/index.html'),
-          chunks: ['index'],
+          filename: 'static.html',
+          template: path.resolve(__dirname, 'client/html/static.html'),
+          chunks: ['static'],
         },
       },
       bundles: {
