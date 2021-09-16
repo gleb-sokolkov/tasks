@@ -78,11 +78,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: config.webpack.entries.bundles.css
         }),
-<<<<<<< HEAD
-        new HtmlWebpackPlugin(config.webpack.entries.index.html),
-=======
         new HtmlWebpackPlugin(config.webpack.entries.static.html),
->>>>>>> 2016f9e... intial commit
         new ESLintWebpackPlugin(),
     ],
 };
