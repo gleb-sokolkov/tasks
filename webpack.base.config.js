@@ -1,13 +1,6 @@
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-<<<<<<< HEAD
-=======
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
-const webpack = require('webpack');
->>>>>>> 90ff6b2... imagemin settings
 const config = require('./config');
 
 module.exports = {
@@ -87,17 +80,5 @@ module.exports = {
         }),
         new HtmlWebpackPlugin(config.webpack.entries.static.html),
         new ESLintWebpackPlugin(),
-        new ImageminWebpWebpackPlugin({
-            config: [{
-                test: /\.(jpe?g|png)/,
-                options: {
-                  quality:  75
-                }
-              }],
-              overrideExtension: true,
-              detailedLogs: false,
-              silent: false,
-              strict: true,
-        }),
     ],
 };
