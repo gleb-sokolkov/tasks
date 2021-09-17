@@ -1,8 +1,279 @@
-html, body {
+html,
+body {
   background: $black;
   color: $white;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: normal;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: $font;
+  line-height: $line;
+}
+
+a {
+  color: $white;
+}
+
+.header {
+  height: $header-h;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  &__body {
+    flex: 1 1 auto;
+    max-width: 396px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $header-logo-container-gap;
+
+    & > * {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__login-container {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: $header-login-container-gap;
+
+    & > * {
+      flex: 0 0 auto;
+    }
+  }
+
+  &__login-logo {
+    display: block;
+    width: $header-login-w;
+    height: $header-login-h;
+  }
+
+  &__login {
+    font-size: $header-login-a-font;
+    line-height: $header-login-a-line;
+    text-underline-offset: $header-login-a-und-off;
+    line-height: 1;
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    &__logo-container {
+      padding-left: $header-logo-container-p;
+    }
+
+    &__login-logo {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  width: $logo-w;
+  height: $logo-h;
+}
+
+.logo-subtext {
+  width: $logo_subtext-w;
+  height: $logo_subtext-h;
+}
+
+.main {
+  // max-height: $main-h;
+  display: flex;
+  align-items: stretch;
+  justify-content: start;
+  flex-flow: column nowrap;
+  padding-top: $main-pt;
+  padding-bottom: $main-pb;
+
+  &__full-height {
+    flex: 1 1 auto;
+  }
+
+  &__auto-height {
+    flex: 0 0 auto;
+  }
+}
+.greeting {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  overflow-x: hidden;
+  gap: 1rem; // for safety
+  padding-bottom: $greeting-pb;
+  padding-right: $greeting-pr;
+
+  &__text-container {
+    flex: 1 0 240px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-flow: column nowrap;
+    gap: $greeting-text-container-gap;
+    padding-top: $greeting-text-container-pt;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    margin: 0;
+    max-width: 500px; // for safety
+    padding-left: $greeting-subtitle-pl;
+    font-size: $greeting-subtitle-font;
+    line-height: $greeting-subtitle-line;
+
+    @media (max-width: $min-content-w * 1px) {
+      & > br {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    flex: 0 0 auto;
+    max-width: $main-img-max-w;
+    height: auto;
+  }
+}
+.greeting-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: $greeting-actions-pr;
+  flex-wrap: wrap;
+  gap: $greeting-actions-min-gap;
+
+  &__download {
+    flex: 0 0 auto;
+    font-size: $greeting-download-font;
+    font-family: "Montserrat";
+    line-height: $greeting-download-line;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  &__brands {
+    gap: $greeting-brands-gap;
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    justify-content: center;
+  }
+}
+
+.brand-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  & > * {
+    flex: 0 0 auto;
+  }
+
+  a {
+    text-decoration: none;
+    line-height: 0;
+  }
+
+  &__appstore {
+    img {
+      max-width: $apple-badge-max-w;
+      height: auto;
+    }
+  }
+
+  &__play {
+    & > img {
+      max-width: $play-badge-max-w;
+      height: auto;
+    }
+  }
+}
+
+.cookie {
+  background: $dark-gray;
+  position: relative;
+
+  &__container {
+    height: $cookie-container-h;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-right: $cookie-container-pr;
+  }
+
+  &__message {
+    font-size: $cookie-message-font;
+    line-height: $cookie-message-line;
+  }
+
+  &__float-button {
+    position: absolute;
+    top: 50%;
+    right: $cookie-float-button-right;
+    transform: translateY(-50%);
+    color: $white;
+    background: $cookie-button;
+    min-width: $cookie-float-button-min-w;
+    padding: $cookie-float-button-p;
+    border: $cookie-float-button-border-w solid $white;
+    border-radius: $cookie-float-button-border-r;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      background: $black;
+    }
+  }
+}
+
+.mission {
+  padding-top: $mission-pt;
+  padding-bottom: 100px;
+}
+
+.motivations {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $motivations-gap;
+
+  &__card {
+    flex: 0 1 $motivations-max-card-w;
+    min-width: 250px;
+    border: $motivations-card-border;
+    border-radius: $motivations-card-border-r; 
+    padding: $motivations-card-p;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: bold;
+    font-size: $motivations-card-header-font;
+    line-height: $motivations-card-header-line;
+    margin: 0 0 30px 0;
+  }
+  
+  &__link {
+  }
 }

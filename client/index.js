@@ -7,4 +7,4 @@ function importAll(r) {
 }
 
 // eslint-disable-next-line no-unused-vars
-const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg|webp)$/));

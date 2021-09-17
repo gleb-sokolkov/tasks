@@ -1,6 +1,11 @@
 .landing-container {
-  max-width: $landing-container-width + $landing-container-px * 2;
+  max-width: $landing-container-w + $landing-container-px * 2;
   padding: 0 $landing-container-px;
   margin: 0 auto;
+  width: 100%;
+
+  &_pr-0 {
+    padding-right: 0;
+  }
 }
 

@@ -1,13 +1,105 @@
 /* ====================================
-             BLOCK VALUES
-=====================================*/
-
-$landing-container-width: 1240px;
-$landing-container-px: 16px;
-
-/* ====================================
                 COLORS
 =====================================*/
 
 $black: hsl(0, 0%, 0%);
-$white: hsl(360, 100%, 100%);
+$white: #fff;
+$cookie-button: rgba($white, 0.1);
+$dark-gray: hsl(218, 22%, 17%);
+
+/* ====================================
+             BLOCK VALUES
+=====================================*/
+
+$max-content-w: 1440;
+$min-content-w: 375;
+
+// container
+$landing-container-w: 1240px;
+$landing-container-px: 16px;
+
+// header
+$header-h: autoFont(85, 116, $min-content-w, $max-content-w);
+$header-body-max-w: 396px;
+
+$header-logo-container-gap: autoFont(10, 22, $min-content-w, $max-content-w);
+$header-logo-container-p: 6px;
+
+$logo-w: autoFont(38, 78, $min-content-w, $max-content-w);
+$logo-h: autoFont(36, 76, $min-content-w, $max-content-w);
+$logo_subtext-w: autoFont(46, 96, $min-content-w, $max-content-w);
+$logo_subtext-h: autoFont(12, 25, $min-content-w, $max-content-w);
+
+$header-login-container-gap: 12px;
+$header-login-w: 26px;
+$header-login-h: 25px;
+
+$header-login-a-font: autoFont(14, 18, $min-content-w, $max-content-w);
+$header-login-a-line: autoFont(19, 25, $min-content-w, $max-content-w);
+$header-login-a-und-off: autoFont(10, 2, $min-content-w, $max-content-w);
+
+$main-h: 860px;
+$main-pt: autoFont(74, 34, $min-content-w, $max-content-w);
+$main-pb: autoFont(21, 25, $min-content-w, $max-content-w);
+
+
+$greeting-gap: 15px 180px;
+$greeting-pr: autoFont(0, 84, 600, 1440);
+
+$greeting-pb: autoFont(56, 85, $min-content-w, $max-content-w);
+
+$greeting-text-container-gap: autoFont(24, 129, $min-content-w, $max-content-w);
+$greeting-text-container-pt: autoFont(47, 94, $min-content-w, $max-content-w);
+
+$greeting-subtitle-pl: autoFont(0, 107, $min-content-w, $max-content-w);
+$greeting-subtitle-font: autoFont(16, 20, $min-content-w, $max-content-w);
+$greeting-subtitle-line: autoFont(22, 27, $min-content-w, $max-content-w);
+$main-img-max-w: autoFont(161, 332, $min-content-w, $max-content-w);
+
+$greeting-actions-pr: autoFont(0, 63, $min-content-w, $max-content-w);
+$greeting-actions-min-gap: 33px;
+
+$greeting-download-font: autoFont(24, 35, $min-content-w, $max-content-w);
+$greeting-download-line: autoFont(29, 70, $min-content-w, $max-content-w);
+
+$greeting-brands-gap: 26px;
+
+$apple-badge-max-w: 163px;
+$play-badge-max-w: 184px;
+
+$cookie-container-h: 93px;
+$cookie-container-pr: 166px;
+
+$cookie-message-font: autoFont(12, 14, $min-content-w, $max-content-w);
+$cookie-message-line: autoFont(16, 19, $min-content-w, $max-content-w);
+
+$cookie-float-button-min-w: autoFont(92, 132, $min-content-w, $max-content-w);
+$cookie-float-button-p: 20px;
+$cookie-float-button-border-w: 0.5px;
+$cookie-float-button-border-r: 6px;
+$cookie-float-button-right: autoFont(16, 22, $min-content-w, $max-content-w);
+
+
+$mission-pt: autoFont(48, 60, $min-content-w, $max-content-w);
+
+$motivations-gap: autoFont(30, 81, $min-content-w, $max-content-w);
+$motivations-max-card-w: 503px;
+$motivations-card-p: autoFont(37, 62, $min-content-w, $max-content-w);
+$motivations-card-border: 2px solid rgba($white, 0.5);
+$motivations-card-border-r: 21.3px;
+$motivations-card-header-font: autoFont(24, 30, $min-content-w, $max-content-w);
+$motivations-card-header-line: autoFont(33, 41, $min-content-w, $max-content-w);
+
+
+/* ====================================
+              TYPOGRAPHY
+=====================================*/
+
+$font: autoFont(16, 18, $min-content-w, $max-content-w);
+$line: autoFont(22, 25, $min-content-w, $max-content-w);
+
+$h1-font: autoFont(35, 64, $min-content-w, $max-content-w);
+$h1-line: autoFont(40, 70, $min-content-w, $max-content-w);
+
+$h2-font: autoFont(24, 51, $min-content-w, $max-content-w);
+$h2-line: autoFont(29, 62, $min-content-w, $max-content-w);
