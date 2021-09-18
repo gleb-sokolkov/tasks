@@ -139,8 +139,6 @@ a {
 
   &__img {
     flex: 0 0 auto;
-    max-width: $main-img-max-w;
-    height: auto;
   }
 }
 .greeting-actions {
@@ -239,7 +237,7 @@ a {
 
 .mission {
   padding-top: $mission-pt;
-  padding-bottom: 100px;
+  padding-bottom: $mission-pb;
 }
 
 .motivations {
@@ -251,9 +249,9 @@ a {
 
   &__card {
     flex: 0 1 $motivations-max-card-w;
-    min-width: 250px;
+    min-width: 250px; // pointless value, just for safety. It helps when the cards are too small
     border: $motivations-card-border;
-    border-radius: $motivations-card-border-r; 
+    border-radius: $motivations-card-border-r;
     padding: $motivations-card-p;
     display: flex;
     justify-content: center;
@@ -271,9 +269,212 @@ a {
     font-weight: bold;
     font-size: $motivations-card-header-font;
     line-height: $motivations-card-header-line;
-    margin: 0 0 30px 0;
+    margin: $motivations-card-header-m;
   }
-  
+
   &__link {
+    font-size: $motivations-card-link-font;
+    line-height: $motivations-card-link-line;
   }
 }
+
+.mission-definition {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: $m-definition-gap;
+  padding: $m-definition-pt 0 0 0;
+  flex-wrap: wrap-reverse;
+
+  &__img-container {
+    flex: 1 0 $m-definition-img-basis;
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: $m-definition-img-max-w;
+    transform-origin: top left;
+    transform: translate(100%) rotateZ(90deg);
+  }
+
+  &__text-container {
+    flex: 1 1 $m-definition-text-max-w;
+    max-width: $m-definition-text-basis;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__text {
+    max-width: $m-definition-textc-max-w;
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    gap: $m-definition-gap-m;
+
+    &__text-container {
+      padding-right: $m-definition-text-pr-m;
+    }
+
+    &__img-container {
+      flex: 1 0 100%;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &__img {
+      position: relative;
+      top: auto;
+      right: auto;
+      transform: none;
+    }
+  }
+}
+
+.text-block {
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &__header {
+    margin: $text-block-header-m;
+  }
+  
+  &__lead {
+    margin: 0;
+  }
+}
+
+.id-scanner {
+
+  padding-bottom: $id-pb;
+
+  &__bg-img-container {
+    height: $id-img-container-h;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: $id-img-container-mb;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      box-shadow: $id-img-overlay;
+    }
+  }
+
+  &__bg-img {
+    flex: 0 0 auto;
+    z-index: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: flex-start;
+    justify-content: center;
+    gap: $id-content-gap;
+  }
+
+  &__img-container {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: $id-images-gap;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__img {
+    max-width: $id-images-img-max-w;
+  }
+  
+  &__text-container {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__text {
+    max-width: $id-textc-max-w;
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    &__text {
+      max-width: 100%;
+    }
+  }
+}
+
+.bi {
+  padding-top: $bi-pt;
+  padding-bottom: $bi-pb;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: $bi-gap;
+
+  &__text {
+    flex: 0 1 auto;
+    padding-top: $bi-text-pt;
+  }
+
+  &__lead {
+    max-width: $bi-text-lead-max-w;
+  }
+
+  &__img-container {
+    flex: 1 1 $bi-img-container-max-basis;
+  }
+
+  &__img {
+    max-width: 100%;
+    max-height: $bi-img-max-height;
+
+    &_mobile {
+      display: none;
+    }
+    
+    &_desktop {
+      display: block;
+    }
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    overflow: hidden;
+
+    &__img-container {
+      margin: $bi-img-containter-m-m;
+    }
+
+    &__img {
+      max-width: none;
+      max-height: $bi-img-max-height-m;
+
+      &_mobile {
+        display: block;
+      }
+      
+      &_desktop {
+        display: none;
+      }
+    }
+  }
+}
+
