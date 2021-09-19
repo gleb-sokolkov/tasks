@@ -6,6 +6,7 @@ $black:                                         hsl(0, 0%, 0%);
 $white:                                         #fff;
 $cookie-button:                                   rgba($white, 0.1);
 $dark-gray:                                     hsl(218, 22%, 17%);
+$tuned-gradient:                                  linear-gradient(179.83deg, #000 -0%, rgba(0, 0, 0, 0) 56.76%, #000 94.92%);
 
 /* ====================================
              BLOCK VALUES
@@ -16,12 +17,12 @@ $min-content-w:                                   375;
 
 // container
 $landing-container-w:                             1240px;
-$landing-container-px:                            16px;
+$_container-px:                                   16;
+$container-px:                                    $_container-px * 1px;
 
 // header
 $header-h:                                        autoFont(85, 116, $min-content-w, $max-content-w);
 $header-body-max-w:                               396px;
-
 $header-logo-container-gap:                       autoFont(10, 22, $min-content-w, $max-content-w);
 $header-logo-container-p:                         6px;
 
@@ -33,7 +34,6 @@ $logo_subtext-h:                                  autoFont(12, 25, $min-content-
 $header-login-container-gap:                      12px;
 $header-login-w:                                  26px;
 $header-login-h:                                  25px;
-
 $header-login-a-font:                             autoFont(14, 18, $min-content-w, $max-content-w);
 $header-login-a-line:                             autoFont(19, 25, $min-content-w, $max-content-w);
 $header-login-a-und-off:                          autoFont(10, 2, $min-content-w, $max-content-w);
@@ -44,24 +44,19 @@ $main-pb:                                         autoFont(21, 25, $min-content-
 
 $greeting-gap:                                    15px 180px;
 $greeting-pr:                                     autoFont(0, 84, 600, 1440);
-
 $greeting-pb:                                     autoFont(56, 85, $min-content-w, $max-content-w);
-
 $greeting-text-container-gap:                     autoFont(24, 129, $min-content-w, $max-content-w);
 $greeting-text-container-pt:                      autoFont(47, 94, $min-content-w, $max-content-w);
-
 $greeting-subtitle-pl:                            autoFont(0, 107, $min-content-w, $max-content-w);
 $greeting-subtitle-font:                          autoFont(16, 20, $min-content-w, $max-content-w);
 $greeting-subtitle-line:                          autoFont(22, 27, $min-content-w, $max-content-w);
 
 $img-max-w:                                       autoFont(161, 332, $min-content-w, $max-content-w);
 
-$greeting-actions-pr:                             autoFont(0, 63, $min-content-w, $max-content-w);
+$greeting-actions-pr:                             autoFont(0, 63 - $_container-px, $min-content-w, $max-content-w);
 $greeting-actions-min-gap:                        33px;
-
 $greeting-download-font:                          autoFont(24, 35, $min-content-w, $max-content-w);
 $greeting-download-line:                          autoFont(29, 70, $min-content-w, $max-content-w);
-
 $greeting-brands-gap:                             26px;
 
 $apple-badge-max-w:                               163px;
@@ -69,10 +64,8 @@ $play-badge-max-w:                                184px;
 
 $cookie-container-h:                              93px;
 $cookie-container-pr:                             166px;
-
 $cookie-message-font:                             autoFont(12, 14, $min-content-w, $max-content-w);
 $cookie-message-line:                             autoFont(16, 19, $min-content-w, $max-content-w);
-
 $cookie-float-button-min-w:                       autoFont(92, 132, $min-content-w, $max-content-w);
 $cookie-float-button-p:                           20px;
 $cookie-float-button-border-w:                    0.5px;
@@ -103,23 +96,16 @@ $m-definition-text-pr-m:                          47px;
 $m-definition-text-basis:                         500px;
 $m-definition-textc-max-w:                        325px;
 
-$text-block-header-m:                             0 0 23px 0;
+$text-block-g:                                    23px;
 
 $id-pb:                                           autoFont(72, 103, $min-content-w, $max-content-w);
 $id-img-container-h:                              autoFont(263, 836, $min-content-w, $max-content-w);
 $id-img-container-mb:                             autoFont(-40, -464, $min-content-w, $max-content-w);
-$id-img-overlay:                                  0 autoFont(-100, -200, $min-content-w, $max-content-w)
-                                                  autoFont(75, 125, $min-content-w, $max-content-w) 
-                                                  autoFont(-25, -50, $min-content-w, $max-content-w) black inset,
-                                                  0 autoFont(100, 200, $min-content-w, $max-content-w) 
-                                                  autoFont(75, 125, $min-content-w, $max-content-w) 
-                                                  autoFont(-25, -50, $min-content-w, $max-content-w) black inset;
 $id-content-gap:                                  autoFont(70, 30, $min-content-w, $max-content-w);
 $id-images-pt:                                    autoFont(0, -386, $min-content-w, $max-content-w);
-$id-images-gap:                                   autoFont(22, 50, $min-content-w, $max-content-w);
+$id-images-gap:                                   autoFont(55, 50, $min-content-w, $max-content-w);
 $id-images-img-max-w:                             autoFont(287, 332, $min-content-w, $max-content-w);
 $id-textc-max-w:                                  317px;
-
 
 $bi-pt:                                           autoFont(72, 103, $min-content-w, $max-content-w); 
 $bi-pb:                                           autoFont(38, 230, $min-content-w, $max-content-w);
@@ -131,7 +117,48 @@ $bi-img-containter-m-m:                           0 -16px;
 $bi-img-max-height:                               900px;
 $bi-img-max-height-m:                             296px;
 
-// 314 459
+
+$qr-pb:                                           autoFont(65, 21, $min-content-w, $max-content-w);
+$qr-first-container-pb:                           33px;
+$qr-container-primary-basis:                      400px;
+$qr-container-secondary-basis:                    300px;
+$qr-img-min-h:                                    autoFont(311, 559, $min-content-w, $max-content-w);
+$qr-bg-img-w:                                     autoFont(88, 138, $min-content-w, $max-content-w);
+$qr-bg-img-r:                                     -51px;
+$qr-night-img-r:                                  20%;
+$qr-text-px:                                      $container-px;
+$qr-text-mb:                                      autoFont(50, 58, $min-content-w, $max-content-w);
+$qr-text-block-max-w:                             721px;
+$qr-text-block-mt:                                autoFont(-84, -69, $min-content-w, $max-content-w);
+$qr-badge-gap:                                    autoFont(22, 28, $min-content-w, $max-content-w);
+$qr-phone-max-w:                                  autoFont(280, 332, $min-content-w, $max-content-w);
+$qr-phone-container-px:                           $container-px; 
+$qr-phone-container-m:                            autoFont(-91, -391, $min-content-w, $max-content-w) auto 0 
+                                                  autoFont(0, -140, 1000, $max-content-w);
+$qr-phone-container-basis:                        1008px;
+$qr-phone-container-gap:                          autoFont(50, 80, $min-content-w, $max-content-w);
+
+$qrgen-pt:                                        $qr-pb;
+$qrgen-gap:                                       autoFont(70, 80, $min-content-w, $max-content-w);
+$qrgen-img-max-w:                                 autoFont(181, 332, $min-content-w, $max-content-w);
+$qrgen-arrow-max-w:                               100px;
+$qrgen-arrow-rot:                                 36deg;
+$qrgen-arrow-top:                                 29%;
+$qrgen-arrow-right:                               -17%;
+$qrgen-arrow-top-m:                               89%;
+$qrgen-arrow-right-m:                             5%;
+$qrgen-sign-left:                                 autoFont(-50, 94, $min-content-w, $max-content-w);
+$qrgen-sign-m:                                    10px 0 0 0;
+$qrgen-sign-m-m:                                  26px 0 0 0;
+$qrgen-pb:                                        autoFont(100, 96, $min-content-w, $max-content-w);
+$qrgen-text-max-w:                                292px;
+
+$features-pt:                                     $qrgen-pb;
+$features-textcont-max-w:                         421px;
+$features-textcont-mr:                            9px;
+$features-imgb-max-w:                             868px;
+$features-imgb-p:                                 autoFont(25, 62, $min-content-w, $max-content-w);
+$features-badges-max-w:                           autoFont(166, 266, $min-content-w, $max-content-w);
 
 /* ====================================
               TYPOGRAPHY
@@ -142,6 +169,7 @@ $line:                                            autoFont(22, 25, $min-content-
 
 $h1-font:                                         autoFont(35, 64, $min-content-w, $max-content-w);
 $h1-line:                                         autoFont(40, 70, $min-content-w, $max-content-w);
-
 $h2-font:                                         autoFont(24, 51, $min-content-w, $max-content-w);
 $h2-line:                                         autoFont(29, 62, $min-content-w, $max-content-w);
+$h4-font:                                         autoFont(18, 21, $min-content-w, $max-content-w);
+$h4-line:                                         autoFont(22, 26, $min-content-w, $max-content-w);

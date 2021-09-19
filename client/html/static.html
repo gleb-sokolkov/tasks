@@ -34,17 +34,19 @@
                         their business from a single sdashboard
                     </p>
                 </div>
-                <img src="<%=require('../images/main.png')%>" alt="greeting-img" class="img greeting__img">
+                <img src="<%=require('../images/main.png')%>" alt="greeting-img" class="phone greeting__img">
             </div>
-            <div class="main__auto-height greeting-actions landing-container">
-                <a href="#" class="greeting-actions__download">download our app</a>
-                <div class="greeting-actions__brands brand-badges">
-                    <a href="#" class="brand-badges__appstore">
-                        <img src="<%=require('../images/apple.png')%>" alt="appstore">
-                    </a>
-                    <a href="#" class="brand-badges__play">
-                        <img src="<%=require('../images/play.png')%>" alt="google play">
-                    </a>
+            <div class="landing-container">
+                <div class="main__auto-height greeting-actions">
+                    <a href="#" class="greeting-actions__download">download our app</a>
+                    <div class="greeting-actions__brands brand-badges">
+                        <a href="#" class="brand-badges__appstore">
+                            <img src="<%=require('../images/apple.png')%>" alt="appstore">
+                        </a>
+                        <a href="#" class="brand-badges__play">
+                            <img src="<%=require('../images/play.png')%>" alt="google play">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -132,6 +134,106 @@
             <div class="bi__img-container">
                 <img src="<%=require('../images/bi.png')%>" alt="BI image" class="bi__img bi__img_desktop">
                 <img src="<%=require('../images/bi_m.png')%>" alt="BI image" class="bi__img bi__img_mobile">
+            </div>
+        </section>
+        <section class="qr">
+            <div class="qr-pre">
+                <div class="qr-pre__container qr-pre__container_primary">
+                    <div class="qr-pre__img-container qr-pre__img-container_tuned">
+                        <img src="<%=require('../images/qr.jpg')%>" alt="QR code" class="bg-img">
+                    </div>
+                    <div class="qr-pre__text-container">
+                        <div class="qr-pre__text-wrapper">
+                            <div class="qr-pre__text text-block">
+                                <h2 class="text-block__header">
+                                    QR code
+                                </h2>
+                                <p class="text-block__lead">
+                                    No more conflict situations due to <br>
+                                    wrong order. The guest selects the <br>
+                                    positions, and after that an <br>
+                                    individual QR code of his order <br>
+                                    is generated
+                                </p>
+                            </div>
+                            <div class="qr-pre__badges brand-badges">
+                                <a href="#" class="brand-badges__appstore">
+                                    <img src="<%=require('../images/apple.png')%>" alt="appstore">
+                                </a>
+                                <a href="#" class="brand-badges__play">
+                                    <img src="<%=require('../images/play.png')%>" alt="google play">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="qr-pre__container qr-pre__container_secondary">
+                    <div class="qr-pre__img-container">
+                        <img src="<%=require('../images/nightlife_bg.jpg')%>" alt="Night life background"
+                            class="bg-img qr-pre__bg-img">
+                        <img src="<%=require('../images/nightlife.png')%>" alt="Night life background"
+                            class="qr-pre__night-img">
+                    </div>
+                    <div class="qr-pre__phone-container">
+                        <div class="qr-pre__phone-wait-container">
+                            <img src="<%=require('../images/order_w.png')%>" alt="Order waiting"
+                                class="qr-pre__phone-wait">
+                        </div>
+                        <div class="qr-pre__phone-cooking-container">
+                            <img src="<%=require('../images/order_c.png')%>" alt="Order cooking"
+                                class="qr-pre__phone-cooking">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="qr-gen landing-container">
+                <div class="qr-gen__img-container">
+                    <img src="<%=require('../images/order_c.png')%>" alt="Generate QR-code" class="qr-gen__img">
+                    <div class="qr-gen__arrow-container">
+                        <img src="<%=require('../images/arrow.png')%>" alt="Arrow" class="qr-gen__arrow">
+                        <h4 class="qr-gen__sign">Scan QR-code</h4>
+                    </div>
+                </div>
+                <div class="qr-gen__text-container">
+                    <div class="text-block text-block_between">
+                        <h2 class="text-block__header">
+                            Generate your <br>
+                            QR-code
+                        </h2>
+                        <p class="qr-gen__lead text-block__lead">
+                            The guest QR code is scanned
+                            by the staff and automatically sent
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="features landing-container">
+            <div class="features__text-container">
+                <div class="text-block">
+                    <h2 class="text-block__header">
+                        Easier ordering. <br>
+                        Happier guests.
+                    </h2>
+                    <p class="text-block__lead">
+                        NoTab makes it simple for patrons to easily
+                    </p>
+                </div>
+            </div>
+            <div class="features__img-with-badges">
+                <img src="<%=require('../images/cocktails.png')%>" alt="Feature" class="img">
+                <div class="features__top badge">
+                    No more lost or forgotten credit cards
+                </div>
+                <div class="features__left badge">
+                    No more lost or forgotten credit cards
+                </div>
+                <div class="features__bottom badge">
+                    Skip the line
+                </div>
+                <div class="features__right badge badge_accent">
+                    No more split <br> your tab
+                </div>
             </div>
         </section>
     </main>

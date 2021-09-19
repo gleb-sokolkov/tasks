@@ -1,11 +1,33 @@
-.landing-container {
-  max-width: $landing-container-w + $landing-container-px * 2;
-  padding: 0 $landing-container-px;
+._container, .landing-container {
+  padding: 0 $container-px;
   margin: 0 auto;
-  width: 100%;
-
+  width: 100%;  
+  
   &_pr-0 {
     padding-right: 0;
   }
+
+  &_ml-auto {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &_mr-auto {
+    margin-right: auto;
+    margin-left: 0;
+  }
 }
 
+.landing-container {
+  max-width: $landing-container-w + $container-px * 2;
+}
+
+/* ====================================
+              FLEX
+=====================================*/
+
+.between-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

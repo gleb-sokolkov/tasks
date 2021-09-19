@@ -1,3 +1,7 @@
+/* ====================================
+              BLOCKS
+=====================================*/
+
 .bold,
 h1,
 h2,
@@ -28,24 +32,89 @@ h2 {
   line-height: $h2-line;
 }
 
+h4 {
+  font-size: $h4-font;
+  line-height: $h4-line;
+}
+
 p {
   font-family: "Noto Sans";
   font-weight: normal;
 }
 
-.img {
+.phone {
   max-width: $img-max-w;
   height: auto;
 }
 
-.bg-img {
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: $text-block-g;
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &_between {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__header {
+    margin: 0;
+  }
+
+  &__lead {
+    margin: 0;
+  }
+}
+
+.badge {
+  font-size: autoFont(14, 22, $min-content-w, $max-content-w);
+  line-height: autoFont(16, 27, $min-content-w, $max-content-w);
+  padding: autoFont(13, 22, $min-content-w, $max-content-w);
+
+  color: $white;
+  background: $black;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+
+  border: 1px solid rgba($white, 0.5);
+  border-radius: 10px;
+
+  &_accent {
+    font-weight: bold;
+  }
+}
+
+/* ====================================
+              POSITION
+=====================================*/
+
+.abs-full {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.bg-img {
+  @extend .abs-full;
   object-fit: cover;
 }
 
