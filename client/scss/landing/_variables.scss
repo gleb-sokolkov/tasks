@@ -4,9 +4,9 @@
 
 $black:                                         hsl(0, 0%, 0%);
 $white:                                         #fff;
-$cookie-button:                                   rgba($white, 0.1);
 $dark-gray:                                     hsl(218, 22%, 17%);
 $tuned-gradient:                                  linear-gradient(179.83deg, #000 -0%, rgba(0, 0, 0, 0) 56.76%, #000 94.92%);
+
 
 /* ====================================
              BLOCK VALUES
@@ -59,17 +59,11 @@ $greeting-download-font:                          autoFont(24, 35, $min-content-
 $greeting-download-line:                          autoFont(29, 70, $min-content-w, $max-content-w);
 $greeting-brands-gap:                             26px;
 
-$apple-badge-max-w:                               163px;
-$play-badge-max-w:                                184px;
-
 $cookie-container-h:                              93px;
 $cookie-container-pr:                             166px;
 $cookie-message-font:                             autoFont(12, 14, $min-content-w, $max-content-w);
 $cookie-message-line:                             autoFont(16, 19, $min-content-w, $max-content-w);
 $cookie-float-button-min-w:                       autoFont(92, 132, $min-content-w, $max-content-w);
-$cookie-float-button-p:                           20px;
-$cookie-float-button-border-w:                    0.5px;
-$cookie-float-button-border-r:                    6px;
 $cookie-float-button-right:                       autoFont(16, 22, $min-content-w, $max-content-w);
 
 $mission-pt:                                      autoFont(48, 60, $min-content-w, $max-content-w);
@@ -159,6 +153,30 @@ $features-textcont-mr:                            9px;
 $features-imgb-max-w:                             868px;
 $features-imgb-p:                                 autoFont(25, 62, $min-content-w, $max-content-w);
 $features-badges-max-w:                           autoFont(166, 266, $min-content-w, $max-content-w);
+
+$enq-pt:                                          autoFont(127, 50, $min-content-w, $max-content-w);
+$enq-pb:                                          autoFont(29, 51, $min-content-w, $max-content-w);
+$enq-imgcont-py:                                  autoFont(50, 259, $min-content-w, $max-content-w);
+$enq-textbg-font:                                 autoFont(80, 148, $min-content-w, $max-content-w);
+$enq-textbg-ws:                                   autoFont(-16, -30, $min-content-w, $max-content-w);
+$enq-text-mb:                                     autoFont(49, 82, $min-content-w, $max-content-w);              
+$enq-submit-max-w:                                398px;
+
+$footer-pt:                                       autoFont(44, 77, $min-content-w, $max-content-w);
+$footer-pb:                                       autoFont(24, 86, $min-content-w, $max-content-w);
+$footer-links-pb:                                 autoFont(32, 75, $min-content-w, $max-content-w);
+$footer-linkh-mb:                                 autoFont(45, 33, $min-content-w, $max-content-w);
+$footer-badges-gap:                               autoFont(24, 59, $min-content-w, $max-content-w);
+$footer-info-panel-pt:                            $footer-links-pb;
+$footer-info-panel-gap:                           58px;
+$footer-infoh-ls:                                 1px;
+$footer-infoh-mb:                                 16px;
+$footer-contacts-font:                            autoFont(14, 18, $min-content-w, $max-content-w);
+$footer-contacts-line:                            autoFont(18, 25, $min-content-w, $max-content-w);
+$footer-contacts-mb:                              autoFont(9, 19, $min-content-w, $max-content-w);
+$footer-navlinks-font:                            18px;
+$footer-navlinks-line:                            25px;
+$footer-navlinks-link-mb:                         autoFont(14, 25, $min-content-w, $max-content-w);
 
 /* ====================================
               TYPOGRAPHY

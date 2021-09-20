@@ -331,8 +331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function importAll(r) {
   return r.keys().map(r);
-} // eslint-disable-next-line no-unused-vars
-
+}
 
 var images = importAll(__webpack_require__("./client/images sync \\.(png|jpe?g|svg|webp)$"));
 }();

@@ -6,6 +6,8 @@ body {
   font-weight: normal;
   font-size: $font;
   line-height: $line;
+  --border-color: hsl(0, 0%, 36%);
+  --red: rgb(250, 74, 61);
 }
 
 a {
@@ -99,6 +101,7 @@ a {
     flex: 0 0 auto;
   }
 }
+
 .greeting {
   display: flex;
   align-items: flex-start;
@@ -129,18 +132,13 @@ a {
     padding-left: $greeting-subtitle-pl;
     font-size: $greeting-subtitle-font;
     line-height: $greeting-subtitle-line;
-
-    @media (max-width: $min-content-w * 1px) {
-      & > br {
-        display: none;
-      }
-    }
   }
 
   &__img {
     flex: 0 0 auto;
   }
 }
+
 .greeting-actions {
   display: flex;
   align-items: center;
@@ -168,40 +166,18 @@ a {
   }
 }
 
-.brand-badges {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  & > * {
-    flex: 0 0 auto;
-  }
-
-  a {
-    text-decoration: none;
-    line-height: 0;
-  }
-
-  &__appstore {
-    img {
-      max-width: $apple-badge-max-w;
-      height: auto;
-    }
-  }
-
-  &__play {
-    & > img {
-      max-width: $play-badge-max-w;
-      height: auto;
-    }
-  }
-}
-
 .cookie {
   background: $dark-gray;
   position: relative;
-
+  
+  &_fixed {
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+  
   &__container {
     height: $cookie-container-h;
     display: flex;
@@ -220,18 +196,8 @@ a {
     top: 50%;
     right: $cookie-float-button-right;
     transform: translateY(-50%);
-    color: $white;
-    background: $cookie-button;
     min-width: $cookie-float-button-min-w;
-    padding: $cookie-float-button-p;
-    border: $cookie-float-button-border-w solid $white;
-    border-radius: $cookie-float-button-border-r;
     text-transform: uppercase;
-
-    &:hover,
-    &:focus {
-      background: $black;
-    }
   }
 }
 
@@ -527,12 +493,6 @@ a {
 
   &__text {
     margin-bottom: $qr-text-mb;
-
-    @media (max-width: $min-content-w * 1px) {
-      br {
-        display: none;
-      }
-    }
   }
 
   &__badges {
@@ -637,7 +597,7 @@ a {
       transform: rotateZ($qrgen-arrow-rot);
     }
 
-    &__sign { 
+    &__sign {
       margin: $qrgen-sign-m-m;
     }
   }
@@ -713,6 +673,173 @@ a {
       top: 110%;
       right: -31%;
       transform: translate(-100%, -100%);
+    }
+  }
+}
+
+.enq {
+  padding-top: $enq-pt;
+  padding-bottom: $enq-pb;
+
+  &__img-container {
+    display: block;
+    padding: $enq-imgcont-py 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__img-container::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: $tuned-gradient;
+  }
+
+  &__img-container::after {
+    content: "NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB NOTAB ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 100%;
+    word-spacing: $enq-textbg-ws;
+    font-size: $enq-textbg-font;
+    line-height: 1;
+    color: black;
+    text-shadow: 0 0 2px white;
+    z-index: 0;
+  }
+
+  &__img {
+    position: relative;
+    max-width: 859px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    z-index: 2;
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 818px;
+  }
+
+  &__bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__text {
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    margin-bottom: $enq-text-mb;
+  }
+
+  &__submit {
+    max-width: $enq-submit-max-w;
+    width: 100%;
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    &__img-container {
+      display: none;
+    }
+  }
+}
+
+.footer {
+  padding-top: $footer-pt;
+  padding-bottom: $footer-pb;
+
+  &__links {
+    padding-bottom: $footer-links-pb;
+  }
+
+  &__links-header {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Noto Sans", sans-serif;
+    margin: 0 0 $footer-linkh-mb 0;
+  }
+
+  &__badges {
+    gap: $footer-badges-gap;
+  }
+
+  &__info-panel {
+    padding-top: $footer-info-panel-pt;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-flow: row wrap-reverse;
+    gap: $footer-info-panel-gap;
+    font-family: "Anevir", sans-serif;
+  }
+
+  &__info {
+    flex: 0 1 auto;
+  }
+
+  &__header {
+    font-family: "Manrope", sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: $footer-infoh-ls;
+    margin: 0 0 $footer-infoh-mb 0;
+  }
+
+  &__copyright,
+  &__contacts {
+    font-size: $footer-contacts-font;
+    line-height: $footer-contacts-line;
+    font-family: "Anevir", sans-serif;
+  }
+
+  &__contacts {
+    font-weight: normal;
+    margin: 0 0 $footer-contacts-mb;
+  }
+
+  &__email {
+    font-weight: bold;
+  }
+
+  &__copyright {
+    margin: 0;
+  }
+
+  &__nav-links {
+  }
+
+  &__link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    font-size: $footer-navlinks-font;
+    line-height: $footer-navlinks-line;
+    letter-spacing: 0.5px;
+  }
+
+  &__link:not(:last-child) {
+    margin-bottom: $footer-navlinks-link-mb;
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    &__info-panel {
+      justify-content: center;
+      text-align: center;
     }
   }
 }

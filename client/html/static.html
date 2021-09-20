@@ -29,8 +29,8 @@
                         A platform <br> that works smarter
                     </h1>
                     <p class="greeting__subtitle">
-                        NoTab allows bars & nightclubs <br>
-                        to manage, understand, and grow <br>
+                        NoTab allows bars & nightclubs <br class="br">
+                        to manage, understand, and grow <br class="br">
                         their business from a single sdashboard
                     </p>
                 </div>
@@ -40,24 +40,16 @@
                 <div class="main__auto-height greeting-actions">
                     <a href="#" class="greeting-actions__download">download our app</a>
                     <div class="greeting-actions__brands brand-badges">
-                        <a href="#" class="brand-badges__appstore">
+                        <a href="#" class="appstore">
                             <img src="<%=require('../images/apple.png')%>" alt="appstore">
                         </a>
-                        <a href="#" class="brand-badges__play">
+                        <a href="#" class="play">
                             <img src="<%=require('../images/play.png')%>" alt="google play">
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-        <aside class="cookie">
-            <div class="landing-container cookie__container">
-                <p class="cookie__message">
-                    We use cookie to improve your experience on our site. By using our site you consent cookies.
-                </p>
-            </div>
-            <button class="cookie__float-button">ok</button>
-        </aside>
         <section class="mission landing-container">
             <div class="motivations">
                 <div class="motivations__card">
@@ -149,18 +141,18 @@
                                     QR code
                                 </h2>
                                 <p class="text-block__lead">
-                                    No more conflict situations due to <br>
-                                    wrong order. The guest selects the <br>
-                                    positions, and after that an <br>
-                                    individual QR code of his order <br>
+                                    No more conflict situations due to <br class="br">
+                                    wrong order. The guest selects the <br class="br">
+                                    positions, and after that an <br class="br">
+                                    individual QR code of his order <br class="br">
                                     is generated
                                 </p>
                             </div>
                             <div class="qr-pre__badges brand-badges">
-                                <a href="#" class="brand-badges__appstore">
+                                <a href="#" class="appstore">
                                     <img src="<%=require('../images/apple.png')%>" alt="appstore">
                                 </a>
-                                <a href="#" class="brand-badges__play">
+                                <a href="#" class="play">
                                     <img src="<%=require('../images/play.png')%>" alt="google play">
                                 </a>
                             </div>
@@ -236,7 +228,76 @@
                 </div>
             </div>
         </section>
+        <section class="enq">
+            <div class="enq__img-container">
+                <img src="<%=require('../images/notab.png')%>" alt="NOTAB" class="enq__img img">
+            </div>
+            <div class="enq__content landing-container">
+                <div class="enq__text text-block">
+                    <h2 class="text-block__header">Get In Touch</h2>
+                    <p class="text-block__lead">
+                        Have questions about Noble or just want to say hello? <br class="br">
+                        Drop us a line and a member of our team will getback to you shortly.
+                    </p>
+                </div>
+                <form action="POST" class="enq__form flex-form flex-form_wrong flex-form_center">
+                    <input type="text" name="name" placeholder="Name" class="flex-form__row input">
+                    <input type="text" name="venueName" placeholder="Venue Name" class="flex-form__row input">
+                    <div class="flex-form__row form-group">
+                        <input type="text" name="venuCity" placeholder="Venue City" class="input">
+                        <input type="text" name="stateCity" placeholder="State City" class="input">
+                    </div>
+                    <input type="email" name="email" placeholder="Email" class="flex-form__row input">
+                    <input type="text" name="subject" placeholder="Subject" class="flex-form__row input">
+                    <input type="texta" name="subject" placeholder="Subject" class="flex-form__row input">
+                    <textarea name="message" id="message" rows="6" placeholder="Message"
+                        class="flex-form__row flex-form__row_last textarea"></textarea>
+                    <button type="submit" class="enq__submit btn-big">Send</button>
+                </form>
+            </div>
+        </section>
     </main>
+    <footer class="footer landing-container">
+        <div class="footer__links">
+            <h4 class="footer__links-header">download our app</h4>
+            <div class="footer__badges brand-badges">
+                <a href="#" class="appstore appstore_big">
+                    <img src="<%=require('../images/apple.png')%>" alt="appstore">
+                </a>
+                <a href="#" class="play play_big">
+                    <img src="<%=require('../images/play.png')%>" alt="google play">
+                </a>
+            </div>
+        </div>
+        <div class="footer__info-panel">
+            <div class="footer__info">
+                <h4 class="footer__header">notab</h4>
+                <p class="footer__contacts">
+                    Contact us: <br class="br">
+                    <span class="footer__email">
+                        support@notab.com
+                    </span>
+                </p>
+                <p class="footer__copyright">
+                    © 2020 - NoTab®
+                </p>
+            </div>
+            <div class="footer__nav-links">
+                <ul class="footer__link-list">
+                    <li class="footer__link">Terms to use</li>
+                    <li class="footer__link">Privacy policy</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <aside class="cookie cookie_fixed">
+        <div class="landing-container cookie__container">
+            <p class="cookie__message">
+                We use cookie to improve your experience on our site. By using our site you consent cookies.
+            </p>
+        </div>
+        <button class="cookie__float-button btn">ok</button>
+    </aside>
 </body>
 
 </html>

@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
 }
 
@@ -45,6 +45,70 @@ p {
 .phone {
   max-width: $img-max-w;
   height: auto;
+}
+
+.br {
+  display: block;
+
+  @media (max-width: $min-content-w * 1px) {
+    display: none;
+  }
+}
+
+.btn {
+  $btn-p: 20px !default;
+  $btn-w: 0.5px !default;
+  $btn-r: 6px !default;
+  $btn-bg: rgba(255, 255, 255, 0.1) !default;
+  $btn-bg-hover: $black !default;
+  color: $white;
+  background: $btn-bg;
+  padding: $btn-p;
+  border: $btn-w solid $white;
+  border-radius: $btn-r;
+
+  transition: 0.2s;
+
+  &:hover,
+  &:focus {
+    background: $btn-bg-hover;
+    outline: none;
+  }
+}
+
+.btn-big {
+  $btnbig-font: 24px !default;
+  $btnbig-line: 29px !default;
+  $btnbig-bg-hover: rgba($white, 0.1);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: $btnbig-font;
+  line-height: $btnbig-line;
+  background: $black;
+  max-width: 100%;
+  padding: 25px;
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 10px;
+
+  transition: 0.2s;
+
+  &:hover,
+  &:focus {
+    background: $btnbig-bg-hover;
+    outline: none;
+  }
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0 8px 0 -5px rgb(106, 14, 255);
+  }
+
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0 5px 0 -5px rgb(106, 14, 255);
+  }
 }
 
 .img {
@@ -87,7 +151,7 @@ p {
   color: $white;
   background: $black;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
 
@@ -96,6 +160,122 @@ p {
 
   &_accent {
     font-weight: bold;
+  }
+}
+
+.flex-form {
+  $row-mb: autoFont(16, 23, $min-content-w, $max-content-w);
+  $row-mb-last: autoFont(40, 50, $min-content-w, $max-content-w);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: column nowrap;
+
+  &_wrong {
+    --border-color: var(--red);
+  }
+
+  &_center {
+    align-items: center;
+  }
+
+  &__row {
+    margin-bottom: $row-mb;
+    width: 100%;
+  }
+
+  &__row_last {
+    margin-bottom: $row-mb-last;
+  }
+}
+
+.form-group {
+  display: flex;
+  gap: autoFont(16, 23, $min-content-w, $max-content-w);
+  flex-flow: row wrap;
+
+  & > * {
+    flex: 1 1 auto;
+  }
+}
+
+.input,
+.textarea {
+  $hover-color: hsl(225, 50%, 90%);
+  $focus-color: hsla(225, 50%, 90%, 0.5);
+  $placeholder-color: hsl(0, 0%, 75%);
+  $min-width: 200px;
+
+  padding: autoFont(18, 29, $min-content-w, $max-content-w) autoFont(11, 23, $min-content-w, $max-content-w);
+  background: $white;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  font-family: inherit;
+  min-width: $min-width;
+
+  transition: 0.2s ease;
+
+  &_wrong {
+    --border-color: var(--red);
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 5px $focus-color;
+  }
+
+  &:hover {
+    background: $hover-color;
+  }
+}
+
+.brand-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  & > * {
+    flex: 0 0 auto;
+  }
+}
+
+.appstore,
+.play {
+  a {
+    text-decoration: none;
+    line-height: 0;
+  }
+}
+
+.appstore {
+  & > img {
+    $max-width: 163px;
+    max-width: $max-width;
+    height: auto;
+  }
+
+  &_big > img {
+    $max-width: 259px;
+    max-width: $max-width;
+  }
+}
+
+.play {
+  & > img {
+    $max-width: 184px;
+    max-width: $max-width;
+    height: auto;
+  }
+
+  &_big > img {
+    $max-width: 292px;
+    max-width: $max-width;
   }
 }
 
