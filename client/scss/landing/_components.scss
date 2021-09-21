@@ -102,12 +102,12 @@ p {
 
   &:hover {
     border-color: transparent;
-    box-shadow: 0 8px 0 -5px rgb(106, 14, 255);
+    box-shadow: 0 8px 0 -5px $purple;
   }
 
   &:active {
     transform: translateY(3px);
-    box-shadow: 0 5px 0 -5px rgb(106, 14, 255);
+    box-shadow: 0 5px 0 -5px $purple;
   }
 }
 
@@ -277,6 +277,63 @@ p {
     $max-width: 292px;
     max-width: $max-width;
   }
+}
+
+.flash {
+  --flash-size: 125px;
+  --flash-color: #{$white};
+  --flash-radius: 50px;
+
+  width: var(--flash-size);
+  height: var(--flash-size);
+  background: var(--flash-color);
+  filter: blur(var(--flash-radius));
+
+  display: block;
+  border-radius: 50%;
+
+  &_xl {
+    --flash-size: 400px;
+    --flash-radius: 100px;
+  }
+  
+  &_lg {
+    --flash-size: 300px;
+    --flash-radius: 100px;
+  }
+  
+  &_md {
+    --flash-size: 200px;
+    --flash-radius: 65px;
+  }
+
+  &_xs {
+    --flash-size: 100px;
+    --flash-radius: 33px;
+  }
+
+  &_fullsize { 
+    --flash-size: 100%;
+  }
+
+  &_pink {
+    --flash-color: #{$pink};
+  }
+
+  &_purple {
+    --flash-color: #{$purple};
+  }
+
+  &_pink-purple {
+    --flash-color: linear-gradient(0deg, #{$pink} 0%, #{$purple} 100%);
+  }
+}
+
+.line {
+  display: block;
+  width: 139px;
+  height: 4px;
+  background: $white;
 }
 
 /* ====================================

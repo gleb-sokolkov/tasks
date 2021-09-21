@@ -6,7 +6,10 @@ $black:                                         hsl(0, 0%, 0%);
 $white:                                         #fff;
 $dark-gray:                                     hsl(218, 22%, 17%);
 $tuned-gradient:                                  linear-gradient(179.83deg, #000 -0%, rgba(0, 0, 0, 0) 56.76%, #000 94.92%);
-
+$purple:                                         rgb(96, 92, 234);
+$pink:                                           rgb(250, 0, 255);
+$red:                                            rgb(250, 74, 61);
+$border-color:                                   hsl(0, 0%, 36%);
 
 /* ====================================
              BLOCK VALUES
@@ -135,6 +138,7 @@ $qr-phone-container-gap:                          autoFont(50, 80, $min-content-
 $qrgen-pt:                                        $qr-pb;
 $qrgen-gap:                                       autoFont(70, 80, $min-content-w, $max-content-w);
 $qrgen-img-max-w:                                 autoFont(181, 332, $min-content-w, $max-content-w);
+$qrgen-bgtext-font:                               autoFont(75, 200, $min-content-w, $max-content-w);
 $qrgen-arrow-max-w:                               100px;
 $qrgen-arrow-rot:                                 36deg;
 $qrgen-arrow-top:                                 29%;

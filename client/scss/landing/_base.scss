@@ -6,8 +6,15 @@ body {
   font-weight: normal;
   font-size: $font;
   line-height: $line;
-  --border-color: hsl(0, 0%, 36%);
-  --red: rgb(250, 74, 61);
+  --border-color: #{$border-color};
+  --red: #{$red};
+  overflow-x: hidden;
+}
+
+html,
+body,
+* {
+  z-index: 0;
 }
 
 a {
@@ -16,9 +23,12 @@ a {
 
 .header {
   height: $header-h;
+  margin-bottom: calc(#{$header-h} * -1);
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  position: relative;
+  z-index: 99;
 
   &__body {
     flex: 1 1 auto;
@@ -85,13 +95,13 @@ a {
 }
 
 .main {
-  // max-height: $main-h;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   flex-flow: column nowrap;
-  padding-top: $main-pt;
+  padding-top: calc(#{$main-pt} + #{$header-h});
   padding-bottom: $main-pb;
+  overflow: hidden;
 
   &__full-height {
     flex: 1 1 auto;
@@ -107,10 +117,11 @@ a {
   align-items: flex-start;
   justify-content: flex-start;
   flex-flow: row nowrap;
-  overflow-x: hidden;
   gap: 1rem; // for safety
   padding-bottom: $greeting-pb;
   padding-right: $greeting-pr;
+  position: relative;
+  z-index: 0;
 
   &__text-container {
     flex: 1 0 240px;
@@ -127,6 +138,8 @@ a {
   }
 
   &__subtitle {
+    position: relative;
+    z-index: -1;
     margin: 0;
     max-width: 500px; // for safety
     padding-left: $greeting-subtitle-pl;
@@ -134,8 +147,71 @@ a {
     line-height: $greeting-subtitle-line;
   }
 
-  &__img {
+  &__subtitle::before,
+  &__subtitle::after {
+    content: "";
+    position: absolute;
+  }
+
+  &__subtitle::before {
+    @extend .line;
+    z-index: -1;
+    top: 25%;
+    transform: translateX(-100%) rotate(120.61deg);
+  }
+
+  &__subtitle::after {
+    @extend .flash, .flash_purple;
+    z-index: -2;
+    top: -100%;
+    transform: translateX(-100%);
+  }
+
+  &__img-container {
+    position: relative;
+    z-index: -1;
     flex: 0 0 auto;
+  }
+
+  &__flash {
+    position: absolute;
+    width: calc(100% + 100px);
+    top: -14%;
+    left: -31%;
+    z-index: -1;
+  }
+
+  &__flash::before,
+  &__flash::after {
+    display: block;
+    content: "";
+    height: 250px;
+    background: hsl(299, 100%, 50%);
+    opacity: 0.3;
+    border-radius: 50%;
+    position: relative;
+    filter: blur(100px);
+  }
+
+  &__flash::before {
+    @include randomMoving(200, 53, true, "left", "top");
+  }
+
+  &__flash::after {
+    height: 400px;
+    transform: translate(50%, -50%) rotate(60deg);
+    @include randomMoving(200, 47, true, "left", "top");
+  }
+
+  @media (max-width: $min-content-w * 1px) {
+    &__flash {
+      left: -72%;
+    }
+
+    &__flash::before,
+    &__flash::after {
+      opacity: 0.5;
+    }
   }
 }
 
@@ -169,7 +245,11 @@ a {
 .cookie {
   background: $dark-gray;
   position: relative;
-  
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 0.5s ease-in-out, visibility 0s ease-in-out;
+
   &_fixed {
     position: fixed;
     z-index: 3;
@@ -177,7 +257,13 @@ a {
     right: 0;
     left: 0;
   }
-  
+
+  &_closed {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0s ease-in-out 0.5s;
+  }
+
   &__container {
     height: $cookie-container-h;
     display: flex;
@@ -264,6 +350,7 @@ a {
     max-width: $m-definition-img-max-w;
     transform-origin: top left;
     transform: translate(100%) rotateZ(90deg);
+    filter: drop-shadow(0 0 3em rgba($white, 0.1));
   }
 
   &__text-container {
@@ -272,6 +359,23 @@ a {
     display: flex;
     align-items: flex-start;
     justify-content: center;
+  }
+
+  &__header-with-flash {
+    position: relative;
+  }
+
+  &__flash-container {
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    left: 50%;
+  }
+
+  &__flash {
+    position: relative;
+    @include randomMoving(100, 20, true, "left", "top");
+    opacity: 0.5;
   }
 
   &__text {
@@ -298,6 +402,11 @@ a {
       top: auto;
       right: auto;
       transform: none;
+    }
+
+    &__flash-container {
+      top: -100%;
+      left: -13%;
     }
   }
 }
@@ -381,12 +490,22 @@ a {
   gap: $bi-gap;
 
   &__text {
+    position: relative;
     flex: 0 1 auto;
     padding-top: $bi-text-pt;
   }
 
   &__lead {
     max-width: $bi-text-lead-max-w;
+  }
+
+  &__flash {
+    display: block;
+    position: absolute;
+    top: -19%;
+    left: -41%;
+    z-index: -1;
+    opacity: 0.1;
   }
 
   &__img-container {
@@ -408,6 +527,10 @@ a {
 
   @media (max-width: $min-content-w * 1px) {
     overflow: hidden;
+
+    &__flash {
+      display: none;
+    }
 
     &__img-container {
       margin: $bi-img-containter-m-m;
@@ -540,19 +663,83 @@ a {
 
 .qr-gen {
   padding-top: $qrgen-pt;
-  padding-bottom: $qrgen-pb;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: $qrgen-gap;
-  overflow: hidden;
+
+  &__img-wrapper {
+    position: relative;
+    width: 100%;
+  }
 
   &__img-container {
+    padding-bottom: $qrgen-pb;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img-with-arrow {
     position: relative;
   }
 
   &__img {
     max-width: $qrgen-img-max-w;
+  }
+
+  &__bg-text-container {
+    z-index: -1;
+    font-size: $qrgen-bgtext-font;
+    text-transform: uppercase;
+    font-family: "Manrope";
+    font-weight: 800;
+  }
+
+  &__bg-text1,
+  &__bg-text2,
+  &__bg-text3,
+  &__bg-text4 {
+    position: absolute;
+    color: rgba(55, 43, 67, 0.62);
+    opacity: 0.5;
+  }
+
+  &__bg-text1 {
+    $left: autoFont(10, 73, $min-content-w, $max-content-w);
+    top: 23%;
+    left: calc(50% - #{$left});
+    transform: translate(-100%, -50%);
+  }
+
+  &__bg-text2 {
+    $left: autoFont(30, 70, $min-content-w, $max-content-w);
+    top: 23%;
+    left: calc(50% + #{$left});
+    transform: translate(0%, -50%);
+  }
+
+  &__bg-text3 {
+    $left: autoFont(40, 100, $min-content-w, $max-content-w);
+    top: 67%;
+    left: calc(50% - #{$left});
+    transform: translate(-100%, -50%);
+  }
+
+  &__bg-text4 {
+    $left: autoFont(40, 250, $min-content-w, $max-content-w);
+    top: 61%;
+    left: calc(50% + #{$left});
+    transform: translate(0%, -50%);
+  }
+
+  &__flash {
+    position: absolute;
+    z-index: -2;
+    --flash-radius: 250px;
+    max-width: 900px;
+    opacity: 0.3;
   }
 
   &__arrow-container {
@@ -600,11 +787,28 @@ a {
     &__sign {
       margin: $qrgen-sign-m-m;
     }
+
+    &__bg-text1 {
+      top: 35%;
+    }
+
+    &__bg-text2 {
+      top: 35%;
+    }
+
+    &__bg-text3 {
+      top: 55%;
+    }
+
+    &__bg-text4 {
+      top: 53%;
+    }
   }
 }
 
 .features {
   padding-top: $features-pt;
+  position: relative;
 
   &__text-container {
     max-width: $features-textcont-max-w;
@@ -616,6 +820,14 @@ a {
     margin: 0 auto;
     padding: $features-imgb-p;
     position: relative;
+  }
+
+  &__flash {
+    position: absolute;
+    z-index: -1;
+    top: 22%;
+    right: -10em;
+    opacity: 0.2;
   }
 
   &__top,
@@ -690,7 +902,7 @@ a {
 
   &__img-container::before {
     position: absolute;
-    content: '';
+    content: "";
     top: 0;
     left: 0;
     width: 100%;
@@ -726,6 +938,7 @@ a {
   }
 
   &__content {
+    position: relative;
     margin: 0 auto;
     max-width: 818px;
   }
@@ -748,6 +961,22 @@ a {
     width: 100%;
   }
 
+  &__flash1,
+  &__flash2 {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.3;
+  }
+
+  &__flash1 {
+    top: -6%;
+  }
+
+  &__flash2 {
+    right: -46%;
+    bottom: 1%;
+  }
+
   @media (max-width: $min-content-w * 1px) {
     &__img-container {
       display: none;
@@ -758,6 +987,7 @@ a {
 .footer {
   padding-top: $footer-pt;
   padding-bottom: $footer-pb;
+  overflow: hidden;
 
   &__links {
     padding-bottom: $footer-links-pb;
@@ -782,6 +1012,7 @@ a {
     flex-flow: row wrap-reverse;
     gap: $footer-info-panel-gap;
     font-family: "Anevir", sans-serif;
+    position: relative;
   }
 
   &__info {
@@ -834,6 +1065,15 @@ a {
 
   &__link:not(:last-child) {
     margin-bottom: $footer-navlinks-link-mb;
+  }
+
+  &__flash {
+    position: absolute;
+    z-index: -1;
+    left: -10%;
+    top: 0%;
+    opacity: 0.3;
+    transform: rotate(45deg);
   }
 
   @media (max-width: $min-content-w * 1px) {

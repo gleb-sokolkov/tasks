@@ -19,7 +19,7 @@ module.exports = {
       fonts: 'fonts/[hash].[ext][query]',
     },
     entries: {
-      index: {
+      static: {
         js: path.resolve(__dirname, 'client/static.js'),
         html: {
           title: 'Static',

@@ -34,7 +34,10 @@
                         their business from a single sdashboard
                     </p>
                 </div>
-                <img src="<%=require('../images/main.png')%>" alt="greeting-img" class="phone greeting__img">
+                <div class="greeting__img-container">
+                    <div class="greeting__flash"></div>
+                    <img src="<%=require('../images/main.png')%>" alt="greeting-img" class="phone">
+                </div>
             </div>
             <div class="landing-container">
                 <div class="main__auto-height greeting-actions">
@@ -75,9 +78,14 @@
                 </div>
                 <div class="mission-definition__text-container">
                     <div class="mission-definition__text text-block">
-                        <h2 class="text-block__header">
-                            Our mission and vision
-                        </h2>
+                        <div class="mission-definition__header-with-flash">
+                            <h2 class="text-block__header">
+                                Our mission and vision
+                            </h2>
+                            <div class="mission-definition__flash-container">
+                                <div class="mission-definition__flash flash flash_xs flash_pink"></div>
+                            </div>
+                        </div>
                         <p class="text-block__lead">
                             While technology is our sweet spot, we’ve developed our vision alongside
                             our customers to ensure your everyday problems are solved through simplistic tools. And as
@@ -122,6 +130,7 @@
                     just by one click. Track revenue
                     and profit by one click.
                 </p>
+                <div class="bi__flash flash flash_xl flash_pink-purple"></div>
             </div>
             <div class="bi__img-container">
                 <img src="<%=require('../images/bi.png')%>" alt="BI image" class="bi__img bi__img_desktop">
@@ -178,15 +187,26 @@
                     </div>
                 </div>
             </div>
-            <div class="qr-gen landing-container">
-                <div class="qr-gen__img-container">
-                    <img src="<%=require('../images/order_c.png')%>" alt="Generate QR-code" class="qr-gen__img">
-                    <div class="qr-gen__arrow-container">
-                        <img src="<%=require('../images/arrow.png')%>" alt="Arrow" class="qr-gen__arrow">
-                        <h4 class="qr-gen__sign">Scan QR-code</h4>
+            <div class="qr-gen">
+                <div class="qr-gen__img-wrapper">
+                    <div class="qr-gen__img-container">
+                        <div class="qr-gen__img-with-arrow">
+                            <img src="<%=require('../images/order_c.png')%>" alt="Generate QR-code" class="qr-gen__img">
+                            <div class="qr-gen__arrow-container">
+                                <img src="<%=require('../images/arrow.png')%>" alt="Arrow" class="qr-gen__arrow">
+                                <h4 class="qr-gen__sign">Scan QR-code</h4>
+                            </div>
+                        </div>
                     </div>
+                    <div class="qr-gen__bg-text-container abs-full">
+                        <span class="qr-gen__bg-text1">notab</span>
+                        <span class="qr-gen__bg-text2">notab</span>
+                        <span class="qr-gen__bg-text3">notab</span>
+                        <span class="qr-gen__bg-text4">notab</span>
+                    </div>
+                    <div class="qr-gen__flash flash flash_fullsize flash_pink-purple transform-center"></div>
                 </div>
-                <div class="qr-gen__text-container">
+                <div class="qr-gen__text-container landing-container">
                     <div class="text-block text-block_between">
                         <h2 class="text-block__header">
                             Generate your <br>
@@ -227,6 +247,7 @@
                     No more split <br> your tab
                 </div>
             </div>
+            <div class="features__flash flash flash_pink-purple flash_lg"></div>
         </section>
         <section class="enq">
             <div class="enq__img-container">
@@ -249,16 +270,18 @@
                     </div>
                     <input type="email" name="email" placeholder="Email" class="flex-form__row input">
                     <input type="text" name="subject" placeholder="Subject" class="flex-form__row input">
-                    <input type="texta" name="subject" placeholder="Subject" class="flex-form__row input">
+                    <input type="text" name="subject" placeholder="Subject" class="flex-form__row input">
                     <textarea name="message" id="message" rows="6" placeholder="Message"
                         class="flex-form__row flex-form__row_last textarea"></textarea>
                     <button type="submit" class="enq__submit btn-big">Send</button>
                 </form>
+                <div class="enq__flash1 flash flash_lg flash_pink-purple"></div>
+                <div class="enq__flash2 flash flash_lg flash_pink-purple"></div>
             </div>
         </section>
     </main>
-    <footer class="footer landing-container">
-        <div class="footer__links">
+    <footer class="footer">
+        <div class="footer__links landing-container">
             <h4 class="footer__links-header">download our app</h4>
             <div class="footer__badges brand-badges">
                 <a href="#" class="appstore appstore_big">
@@ -269,7 +292,7 @@
                 </a>
             </div>
         </div>
-        <div class="footer__info-panel">
+        <div class="footer__info-panel landing-container">
             <div class="footer__info">
                 <h4 class="footer__header">notab</h4>
                 <p class="footer__contacts">
@@ -279,7 +302,7 @@
                     </span>
                 </p>
                 <p class="footer__copyright">
-                    © 2020 - NoTab®
+                    © 2021 - NoTab®
                 </p>
             </div>
             <div class="footer__nav-links">
@@ -288,15 +311,16 @@
                     <li class="footer__link">Privacy policy</li>
                 </ul>
             </div>
+            <div class="footer__flash flash flash_xl flash_pink-purple"></div>
         </div>
     </footer>
-    <aside class="cookie cookie_fixed">
+    <aside class="cookie cookie_fixed cookie_closed" data-widget="cookie-banner">
         <div class="landing-container cookie__container">
             <p class="cookie__message">
                 We use cookie to improve your experience on our site. By using our site you consent cookies.
             </p>
         </div>
-        <button class="cookie__float-button btn">ok</button>
+        <button class="cookie__float-button btn" data-button="cookie-close">ok</button>
     </aside>
 </body>
 

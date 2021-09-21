@@ -53,6 +53,26 @@
     }
 }
 
+@mixin randomMoving($scale: 1, $speed: 1, $reverse: false, $props...) {
+    $name: randomMoving-#{length($props)}-#{$scale}-#{$speed};
+    $direction: alternate;
+    @if $reverse {
+        $direction: alternate-reverse;
+    }
+    
+    animation: $name 1s * $speed ease-in-out infinite $direction;
+
+    @keyframes #{$name} {
+        @for $i from 0 through 10 {
+            #{$i * 10%} {
+                @each $prop in $props {
+                    #{$prop}: (random($scale) - $scale * 0.5) * 1px;
+                }
+            } 
+        }
+    }
+}
+
 @mixin hideScrollbar {
     &::-webkit-scrollbar {
         width: 0 !important;
