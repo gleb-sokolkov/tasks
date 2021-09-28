@@ -1,19 +1,16 @@
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const webpack = require('webpack');
 const config = require('./config');
 
 module.exports = {
     entry: {
-        index: config.webpack.entries.index.js,
+        static: config.webpack.entries.index.js,
     },
     output: {
         path: config.webpack.output.dist,
-        filename: config.webpack.bundles.js,
-        publicPath: '/',
+        filename: config.webpack.entries.bundles.js,
+        publicPath: './',
     },
     module: {
         rules: [
@@ -25,11 +22,34 @@ module.exports = {
             },
             //static-images
             {
-                test: /\.(?:ico|git|png|jpg|jpeg)$/,
-                type: 'asset/resource',
-                generator: {
-                    filename: config.webpack.entries.images,
-                },
+                test: /\.(?:ico|git|png|jpg|jpeg|webp)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: config.webpack.output.images,
+                            esModule: false,
+                        },
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                          mozjpeg: {
+                            progressive: true,
+                          },
+                          optipng: {
+                            enabled: false,
+                          },
+                          pngquant: {
+                            quality: [0.65, 0.90],
+                            speed: 4
+                          },
+                          gifsicle: {
+                            interlaced: false,
+                          }
+                        }
+                    },
+                ],
             },
             //fonts
             {
@@ -56,18 +76,9 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: config.webpack.bundles.css
+            filename: config.webpack.entries.bundles.css
         }),
         new HtmlWebpackPlugin(config.webpack.entries.index.html),
         new ESLintWebpackPlugin(),
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [
-            new OptimizeCssAssetsPlugin(),
-            new TerserPlugin({
-                parallel: true,
-            })
-        ],
-    },
 };
