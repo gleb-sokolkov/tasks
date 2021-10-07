@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/gleb-sokolkov/tasks.git#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
