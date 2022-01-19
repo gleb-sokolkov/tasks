@@ -5,8 +5,8 @@
     --font-sm:  calc(var(--font-xs) * var(--text-scale-ratio));
     --font-md:  calc(var(--font-sm) * var(--text-scale-ratio));
     --font-lg:  calc(var(--font-md) * var(--text-scale-ratio));
-    --font-xs:  calc(var(--font-lg) * var(--text-scale-ratio));
-    --font-xxs: calc(var(--font-xs) * var(--text-scale-ratio));
+    --font-xl:  calc(var(--font-lg) * var(--text-scale-ratio));
+    --font-xxs: calc(var(--font-xl) * var(--text-scale-ratio));
 
     --space-unit:       1em;
     --space-multiplier: 1.5;

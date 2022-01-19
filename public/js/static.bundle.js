@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -433,3 +434,5 @@ var cookieBanners = _js_cookie__WEBPACK_IMPORTED_MODULE_3__["default"].getAll();
 /******/ })()
 ;
 //# sourceMappingURL=static.bundle.js.map
+=======
+>>>>>>> slider
