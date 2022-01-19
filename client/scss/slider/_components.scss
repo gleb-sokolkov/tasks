@@ -1,0 +1,78 @@
+/* ====================================
+            BORDERS AND SHADOWS
+=====================================*/
+
+.slider-content-border {
+    $border-color: map-get($map: $color-scheme, $key: "black");
+    border: 1px solid $border-color;
+}
+
+.slider-toggle-panel-border {
+    $border-color: map-get($map: $color-scheme, $key: "black");
+    border: 1px solid $border-color;
+    box-shadow: 0px 4px 0px 0px $border-color;
+    border-radius: 4px;
+}
+
+.slider-arrow-border {
+    $border-color: map-get($map: $color-scheme, $key: "black");
+    border: 1px solid $border-color !important;
+    border-radius: 4px !important;
+}
+
+/* ====================================
+              BUTTONS
+=====================================*/
+
+.btn {
+    $bg: map-get($map: $color-scheme, $key: "white");
+    $color: map-get($map: $color-scheme, $key: "black");
+    $color-hover: map-get($map: $color-scheme, $key: "white");
+    $bg-hover: map-get($map: $color-scheme, $key: "black");
+
+    border: none;
+    background: $bg;
+    color: $color;
+    user-select: none;
+    outline: none;
+
+    transition: 0.1s ease;
+
+    &:hover,&:focus {
+        background: $bg-hover;
+        color: $color-hover;
+    }
+
+    &:active {
+        transform: translateY(3px);
+    }
+}
+
+/* ====================================
+               CARDS
+=====================================*/
+.card {
+    width: 30em;
+    height: 20em;
+    background: $white;
+    padding: var(--space-xs);
+    border: 1px solid $black;
+    border-top: 8px solid $pink;
+    border-radius: 4px;
+
+    &__content {
+    }
+}
+
+/* ====================================
+              ANIMATIONS
+=====================================*/
+
+@keyframes scaleUP {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}

@@ -1,0 +1,9 @@
+html,
+body {
+}
+
+body {
+    $col1: map-get($map: $color-scheme, $key: "white");
+    $col2: map-get($map: $color-scheme, $key: "light");
+    @include animated_lines(60px, 2s, $col1, $col2);
+}

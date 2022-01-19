@@ -1,0 +1,197 @@
+/* ====================================
+                COLORS
+=====================================*/
+
+$black:                                         hsl(0, 0%, 0%);
+$white:                                         #fff;
+$dark-gray:                                     hsl(218, 22%, 17%);
+$tuned-gradient:                                  linear-gradient(179.83deg, #000 -0%, rgba(0, 0, 0, 0) 56.76%, #000 94.92%);
+$purple:                                         rgb(96, 92, 234);
+$pink:                                           rgb(250, 0, 255);
+$red:                                            rgb(250, 74, 61);
+$border-color:                                   hsl(0, 0%, 36%);
+
+/* ====================================
+             BLOCK VALUES
+=====================================*/
+
+$max-content-w:                                   1440;
+$min-content-w:                                   375;
+
+// container
+$landing-container-w:                             1240px;
+$_container-px:                                   16;
+$container-px:                                    $_container-px * 1px;
+
+// header
+$header-h:                                        autoFont(85, 116, $min-content-w, $max-content-w);
+$header-body-max-w:                               396px;
+$header-logo-container-gap:                       autoFont(10, 22, $min-content-w, $max-content-w);
+$header-logo-container-p:                         6px;
+
+$logo-w:                                          autoFont(38, 78, $min-content-w, $max-content-w);
+$logo-h:                                          autoFont(36, 76, $min-content-w, $max-content-w);
+$logo_subtext-w:                                  autoFont(46, 96, $min-content-w, $max-content-w);
+$logo_subtext-h:                                  autoFont(12, 25, $min-content-w, $max-content-w);
+
+$header-login-container-gap:                      12px;
+$header-login-w:                                  26px;
+$header-login-h:                                  25px;
+$header-login-a-font:                             autoFont(14, 18, $min-content-w, $max-content-w);
+$header-login-a-line:                             autoFont(19, 25, $min-content-w, $max-content-w);
+$header-login-a-und-off:                          autoFont(10, 2, $min-content-w, $max-content-w);
+
+$main-h:                                          860px;
+$main-pt:                                         autoFont(74, 34, $min-content-w, $max-content-w);
+$main-pb:                                         autoFont(21, 25, $min-content-w, $max-content-w);
+
+$greeting-gap:                                    15px 180px;
+$greeting-pr:                                     autoFont(0, 84, 600, 1440);
+$greeting-pb:                                     autoFont(56, 85, $min-content-w, $max-content-w);
+$greeting-text-container-gap:                     autoFont(24, 129, $min-content-w, $max-content-w);
+$greeting-text-container-pt:                      autoFont(47, 94, $min-content-w, $max-content-w);
+$greeting-subtitle-pl:                            autoFont(0, 107, $min-content-w, $max-content-w);
+$greeting-subtitle-font:                          autoFont(16, 20, $min-content-w, $max-content-w);
+$greeting-subtitle-line:                          autoFont(22, 27, $min-content-w, $max-content-w);
+
+$img-max-w:                                       autoFont(161, 332, $min-content-w, $max-content-w);
+
+$greeting-actions-pr:                             autoFont(0, 63 - $_container-px, $min-content-w, $max-content-w);
+$greeting-actions-min-gap:                        33px;
+$greeting-download-font:                          autoFont(24, 35, $min-content-w, $max-content-w);
+$greeting-download-line:                          autoFont(29, 70, $min-content-w, $max-content-w);
+$greeting-brands-gap:                             26px;
+
+$cookie-container-h:                              93px;
+$cookie-container-pr:                             166px;
+$cookie-message-font:                             autoFont(12, 14, $min-content-w, $max-content-w);
+$cookie-message-line:                             autoFont(16, 19, $min-content-w, $max-content-w);
+$cookie-float-button-min-w:                       autoFont(92, 132, $min-content-w, $max-content-w);
+$cookie-float-button-right:                       autoFont(16, 22, $min-content-w, $max-content-w);
+
+$mission-pt:                                      autoFont(48, 60, $min-content-w, $max-content-w);
+$mission-pb:                                      autoFont(96, 469, $min-content-w, $max-content-w);
+
+$motivations-gap:                                 autoFont(30, 81, $min-content-w, $max-content-w);
+$motivations-max-card-w:                          503px;
+$motivations-card-p:                              autoFont(37, 62, $min-content-w, $max-content-w);
+$motivations-card-border:                         2px solid rgba($white, 0.5);
+$motivations-card-border-r:                       21.3px;
+$motivations-card-header-font:                    autoFont(24, 30, $min-content-w, $max-content-w);
+$motivations-card-header-line:                    autoFont(33, 41, $min-content-w, $max-content-w);
+$motivations-card-header-m:                       0 0 30px 0;
+$motivations-card-link-font:                      autoFont(18, 24, $min-content-w, $max-content-w);
+$motivations-card-link-line:                      autoFont(25, 33, $min-content-w, $max-content-w);
+
+$m-definition-pt:                                 autoFont(110, 246, $min-content-w, $max-content-w);
+$m-definition-gap:                                autoFont(30, 70, $min-content-w, $max-content-w);
+$m-definition-gap-m:                              172px;
+$m-definition-img-basis:                          50px;
+$m-definition-img-max-w:                          autoFont(172, 500, $min-content-w, $max-content-w);
+$m-definition-text-max-w:                         250px;
+$m-definition-text-pr-m:                          47px;
+$m-definition-text-basis:                         500px;
+$m-definition-textc-max-w:                        325px;
+
+$text-block-g:                                    23px;
+
+$id-pb:                                           autoFont(72, 103, $min-content-w, $max-content-w);
+$id-img-container-h:                              autoFont(263, 836, $min-content-w, $max-content-w);
+$id-img-container-mb:                             autoFont(-40, -464, $min-content-w, $max-content-w);
+$id-content-gap:                                  autoFont(70, 30, $min-content-w, $max-content-w);
+$id-images-pt:                                    autoFont(0, -386, $min-content-w, $max-content-w);
+$id-images-gap:                                   autoFont(55, 50, $min-content-w, $max-content-w);
+$id-images-img-max-w:                             autoFont(287, 332, $min-content-w, $max-content-w);
+$id-textc-max-w:                                  317px;
+
+$bi-pt:                                           autoFont(72, 103, $min-content-w, $max-content-w); 
+$bi-pb:                                           autoFont(38, 230, $min-content-w, $max-content-w);
+$bi-gap:                                          autoFont(25, 30, $min-content-w, $max-content-w);
+$bi-text-pt:                                      autoFont(0, 89, $min-content-w, $max-content-w);
+$bi-text-lead-max-w:                              395px;
+$bi-img-container-max-basis:                      400px;
+$bi-img-containter-m-m:                           0 -16px;
+$bi-img-max-height:                               900px;
+$bi-img-max-height-m:                             296px;
+
+
+$qr-pb:                                           autoFont(65, 21, $min-content-w, $max-content-w);
+$qr-first-container-pb:                           33px;
+$qr-container-primary-basis:                      400px;
+$qr-container-secondary-basis:                    300px;
+$qr-img-min-h:                                    autoFont(311, 559, $min-content-w, $max-content-w);
+$qr-bg-img-w:                                     autoFont(88, 138, $min-content-w, $max-content-w);
+$qr-bg-img-r:                                     -51px;
+$qr-night-img-r:                                  20%;
+$qr-text-px:                                      $container-px;
+$qr-text-mb:                                      autoFont(50, 58, $min-content-w, $max-content-w);
+$qr-text-block-max-w:                             721px;
+$qr-text-block-mt:                                autoFont(-84, -69, $min-content-w, $max-content-w);
+$qr-badge-gap:                                    autoFont(22, 28, $min-content-w, $max-content-w);
+$qr-phone-max-w:                                  autoFont(280, 332, $min-content-w, $max-content-w);
+$qr-phone-container-px:                           $container-px; 
+$qr-phone-container-m:                            autoFont(-91, -391, $min-content-w, $max-content-w) auto 0 
+                                                  autoFont(0, -140, 1000, $max-content-w);
+$qr-phone-container-basis:                        1008px;
+$qr-phone-container-gap:                          autoFont(50, 80, $min-content-w, $max-content-w);
+
+$qrgen-pt:                                        $qr-pb;
+$qrgen-gap:                                       autoFont(70, 80, $min-content-w, $max-content-w);
+$qrgen-img-max-w:                                 autoFont(181, 332, $min-content-w, $max-content-w);
+$qrgen-bgtext-font:                               autoFont(75, 200, $min-content-w, $max-content-w);
+$qrgen-arrow-max-w:                               100px;
+$qrgen-arrow-rot:                                 36deg;
+$qrgen-arrow-top:                                 29%;
+$qrgen-arrow-right:                               -17%;
+$qrgen-arrow-top-m:                               89%;
+$qrgen-arrow-right-m:                             5%;
+$qrgen-sign-left:                                 autoFont(-50, 94, $min-content-w, $max-content-w);
+$qrgen-sign-m:                                    10px 0 0 0;
+$qrgen-sign-m-m:                                  26px 0 0 0;
+$qrgen-pb:                                        autoFont(100, 96, $min-content-w, $max-content-w);
+$qrgen-text-max-w:                                292px;
+
+$features-pt:                                     $qrgen-pb;
+$features-textcont-max-w:                         421px;
+$features-textcont-mr:                            9px;
+$features-imgb-max-w:                             868px;
+$features-imgb-p:                                 autoFont(25, 62, $min-content-w, $max-content-w);
+$features-badges-max-w:                           autoFont(166, 266, $min-content-w, $max-content-w);
+
+$enq-pt:                                          autoFont(127, 50, $min-content-w, $max-content-w);
+$enq-pb:                                          autoFont(29, 51, $min-content-w, $max-content-w);
+$enq-imgcont-py:                                  autoFont(50, 259, $min-content-w, $max-content-w);
+$enq-textbg-font:                                 autoFont(80, 148, $min-content-w, $max-content-w);
+$enq-textbg-ws:                                   autoFont(-16, -30, $min-content-w, $max-content-w);
+$enq-text-mb:                                     autoFont(49, 82, $min-content-w, $max-content-w);              
+$enq-submit-max-w:                                398px;
+
+$footer-pt:                                       autoFont(44, 77, $min-content-w, $max-content-w);
+$footer-pb:                                       autoFont(24, 86, $min-content-w, $max-content-w);
+$footer-links-pb:                                 autoFont(32, 75, $min-content-w, $max-content-w);
+$footer-linkh-mb:                                 autoFont(45, 33, $min-content-w, $max-content-w);
+$footer-badges-gap:                               autoFont(24, 59, $min-content-w, $max-content-w);
+$footer-info-panel-pt:                            $footer-links-pb;
+$footer-info-panel-gap:                           58px;
+$footer-infoh-ls:                                 1px;
+$footer-infoh-mb:                                 16px;
+$footer-contacts-font:                            autoFont(14, 18, $min-content-w, $max-content-w);
+$footer-contacts-line:                            autoFont(18, 25, $min-content-w, $max-content-w);
+$footer-contacts-mb:                              autoFont(9, 19, $min-content-w, $max-content-w);
+$footer-navlinks-font:                            18px;
+$footer-navlinks-line:                            25px;
+$footer-navlinks-link-mb:                         autoFont(14, 25, $min-content-w, $max-content-w);
+
+/* ====================================
+              TYPOGRAPHY
+=====================================*/
+
+$font:                                            autoFont(16, 18, $min-content-w, $max-content-w);
+$line:                                            autoFont(22, 25, $min-content-w, $max-content-w);
+
+$h1-font:                                         autoFont(35, 64, $min-content-w, $max-content-w);
+$h1-line:                                         autoFont(40, 70, $min-content-w, $max-content-w);
+$h2-font:                                         autoFont(24, 51, $min-content-w, $max-content-w);
+$h2-line:                                         autoFont(29, 62, $min-content-w, $max-content-w);
+$h4-font:                                         autoFont(18, 21, $min-content-w, $max-content-w);
+$h4-line:                                         autoFont(22, 26, $min-content-w, $max-content-w);

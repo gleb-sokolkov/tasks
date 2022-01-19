@@ -1,0 +1,100 @@
+@import "../styles.scss";
+@import "variables";
+@import "base";
+@import "components";
+
+.slider {
+
+    max-height: $max-height;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: var(--space-xs);
+    font-family: monospace, sans-serif;
+
+    &__title {
+        margin: 0 0 0.25em 0;
+        text-transform: uppercase;
+        font-size: $title-font;
+        color: $black;
+        width: max-content;
+        animation: scaleUP 0.5s ease-in-out infinite alternate;
+    }
+
+    &__content {
+        background: map-get($map: $color-scheme, $key: "white");
+        flex: 1 0 $content-height;
+        position: relative;
+        overflow: hidden;
+
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            bottom: 0;
+            width: 5rem;
+            @include lines(10px, $pink, transparent);
+            opacity: 0.25;
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+
+    &__element {
+        max-width: 40em;
+        max-height: 100%;
+        overflow-y: auto;
+        padding: var(--space-md);
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__toggle-panel {
+        background: map-get($map: $color-scheme, $key: "white");
+        flex: 0 0 auto;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    &__arrow-container {
+        flex: 0 0 auto;
+        padding: var(--space-sm);
+    }
+
+    &__arrow {
+        height: $arrow-size;        
+        width: $arrow-size;        
+    }
+
+    &__toggle-container {
+        flex: 1 1 auto;
+        @extend .flex-center-center;
+        gap: var(--space-sm);
+        overflow-x: auto;
+    }
+
+    &__toggle-element {
+        $color: map-get($map: $color-scheme, $key: "black");
+        width: $toggle-size;
+        height: $toggle-size;
+        flex: 0 0 auto;
+        border: 1px solid $color !important;
+        border-radius: 50% !important;
+
+        &_actived {
+            background: $color;
+        }
+    }
+}
+
+

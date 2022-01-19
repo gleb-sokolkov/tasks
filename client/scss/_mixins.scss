@@ -1,0 +1,89 @@
+@mixin lines($line-width, $first-line, $second-line, $angle: 45deg) {
+    background: repeating-linear-gradient(
+        $angle,
+        $second-line,
+        $second-line $line-width,
+        $first-line $line-width,
+        $first-line $line-width * 2
+    );
+}
+
+@mixin animated_lines($line-width, $duration, $first-line, $second-line) {
+    position: relative;
+    overflow-x: hidden;
+
+    & > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &::after {
+        $angle: 45deg;
+        $sqrt2: 1.414;
+        $x: $line-width / $sqrt2 * 4;
+
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -$x;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+
+        background: repeating-linear-gradient(
+            $angle,
+            $second-line,
+            $second-line $line-width,
+            $first-line $line-width,
+            $first-line $line-width * 2
+        );
+        
+        @if $duration {
+            animation: line-#{$line-width} $duration linear infinite;
+        
+            @keyframes line-#{$line-width} {
+                0% {
+                    background-position: 0px 0px;
+                }
+                100% {
+                    background-position: $x 0px;
+                }
+            }
+        }
+    }
+}
+
+@mixin randomMoving($scale: 1, $speed: 1, $reverse: false, $props...) {
+    $name: randomMoving-#{length($props)}-#{$scale}-#{$speed};
+    $direction: alternate;
+    @if $reverse {
+        $direction: alternate-reverse;
+    }
+    
+    animation: $name 1s * $speed ease-in-out infinite $direction;
+
+    @keyframes #{$name} {
+        @for $i from 0 through 10 {
+            #{$i * 10%} {
+                @each $prop in $props {
+                    #{$prop}: (random($scale) - $scale * 0.5) * 1px;
+                }
+            } 
+        }
+    }
+}
+
+@mixin hideScrollbar {
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@function autoFont($min-fs: 12, $max-fs: 16, $min-sw: 600, $max-sw: 1200) {
+    @return calc(
+        ((clamp(#{$min-sw} * 1px, 100vw, #{$max-sw} * 1px) - #{$min-sw} * 1px) / (#{$max-sw} - #{$min-sw})) *
+            (#{$max-fs} - #{$min-fs}) + #{$min-fs} * 1px
+    );
+}
